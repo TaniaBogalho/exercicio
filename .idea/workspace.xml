@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9207e0dc-436d-4b11-b9dd-641dc388d428" name="Default" comment="" />
+    <list default="true" id="9207e0dc-436d-4b11-b9dd-641dc388d428" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exemplo/WatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exemplo/WatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/com/exemplo/rest/JSONServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/exemplo/rest/JSONServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/exemplo/WatchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/exemplo/WatchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/my-jaxrs-example.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/my-jaxrs-example.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/my-jaxrs-example/WEB-INF/classes/com/exemplo/WatchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/my-jaxrs-example/WEB-INF/classes/com/exemplo/WatchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/exemplo/rest/JSONServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/exemplo/rest/JSONServiceTest.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,22 +37,10 @@
       <file leaf-file-name="Dados.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/Dados.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="56" column="31" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="31" />
+            <state relative-caret-position="314">
+              <caret line="116" column="39" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#517#518#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#579#580#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#659#660#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
-                <element signature="e#721#722#0" expanded="true" />
-                <element signature="e#765#766#0" expanded="true" />
-                <element signature="e#801#802#0" expanded="true" />
                 <element signature="method#calcula#0;class#Dados#0" />
               </folding>
             </state>
@@ -51,8 +50,8 @@
       <file leaf-file-name="JSONService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/rest/JSONService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3635">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="390">
+              <caret line="41" column="11" selection-start-line="41" selection-start-column="8" selection-end-line="57" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,14 +59,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WatchService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WatchService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/WatchService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+            <state relative-caret-position="523">
+              <caret line="99" column="17" lean-forward="true" selection-start-line="93" selection-start-column="16" selection-end-line="99" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3760#3782#0" />
+                <element signature="method#removeFirstLine#0;class#WatchService#0" />
+                <element signature="method#clean#0;class#WatchService#0" />
+                <element signature="e#7731#7752#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSONServiceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/test/com/exemplo/rest/JSONServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +89,8 @@
       <file leaf-file-name="CSVReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/CSVReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="389">
+              <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,9 +120,10 @@
       <find>sdf</find>
       <find>localhost</find>
       <find>watcher</find>
-      <find>fileWriter</find>
       <find>Ficheiro não encontrado!!</find>
       <find>builder</find>
+      <find>fileWriter</find>
+      <find>FileWriter</find>
     </findStrings>
     <replaceStrings>
       <replace>15</replace>
@@ -118,6 +132,9 @@
       <replace>19</replace>
       <replace>2018</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -133,10 +150,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/exemplo/CSV_App.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/exemplo/Dados.java" />
-        <option value="$PROJECT_DIR$/src/main/test/com/exemplo/rest/JSONServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/exemplo/rest/JSONService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/exemplo/CSVReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/exemplo/WatchService.java" />
+        <option value="$PROJECT_DIR$/src/main/test/com/exemplo/rest/JSONServiceTest.java" />
       </list>
     </option>
   </component>
@@ -158,6 +175,7 @@
     <option name="width" value="1325" />
     <option name="height" value="907" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -444,34 +462,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="Docker Deploy" type="docker-deploy" factoryName="docker-image" server-name="Docker">
-      <deployment type="docker-image">
-        <settings>
-          <option name="JSONFilePath" value="" />
-          <option name="command" value="" />
-          <option name="commandLineOptions" value="" />
-          <option name="containerName" value="" />
-          <option name="entrypoint" value="" />
-          <option name="imageTag" value="97bb10f0242a" />
-          <option name="portBindings">
-            <list>
-              <DockerPortBindingImpl>
-                <option name="containerPort" value="8080" />
-                <option name="hostPort" value="8008" />
-              </DockerPortBindingImpl>
-            </list>
-          </option>
-          <option name="startBrowserSettings">
-            <browser url="http://127.0.0.1" />
-          </option>
-        </settings>
-      </deployment>
-      <method>
-        <option name="LaunchBrowser.Before.Run" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Docker.Docker Deploy" />
       <item itemvalue="JUnit.JSONServiceTest.testGetAVGInJSON" />
       <item itemvalue="Application.WatchService" />
       <item itemvalue="JUnit.JSONServiceTest.testCVSFileWEB" />
@@ -535,56 +526,78 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="590" y="40" width="1325" height="907" extended-state="0" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1855" height="964" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49967968" weight="0.32911393" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4966038" weight="0.32833958" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003203" side_tool="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5033962" side_tool="true" weight="0.32833958" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49967968" weight="0.32833958" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.307243" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49967968" weight="0.32916147" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32911393" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17962264" />
-      <window_info anchor="bottom" id="Docker" order="8" weight="0.32911393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16442049" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.32916147" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.37203497" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49811321" weight="0.30413017" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32991672" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="8" weight="0.32911393" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="qualquer coisa" />
+    <option name="LAST_COMMIT_MESSAGE" value="qualquer coisa" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exemplo/WatchService.java</url>
-          <line>128</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="48" />
+      <option name="time" value="58" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -597,6 +610,50 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/Dados.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calcula#0;class#Dados#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/rest/JSONService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/CSVReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/WatchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#removeFirstLine#0;class#WatchService#0" />
+            <element signature="method#clean#0;class#WatchService#0" />
+            <element signature="e#7731#7752#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/CSVReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -659,9 +716,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/com/exemplo/Track.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/exemplo/Track.class" />
     <entry file="file://$PROJECT_DIR$/target/classes/com/exemplo/CalculoSoma.class" />
     <entry file="file://$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst">
       <provider selected="true" editor-type-id="text-editor">
@@ -688,13 +743,6 @@
     <entry file="file://$PROJECT_DIR$/test/main/java/com/exemplo/rest/JSONService.java" />
     <entry file="file://$PROJECT_DIR$/src/test/JSONServiceTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/JSONServiceTest.java" />
-    <entry file="file://$PROJECT_DIR$/target/classes/com/exemplo/rest/JSONService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/test-classes/com/exemplo/rest/JSONServiceTest.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -719,25 +767,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/Track.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding>
-            <element signature="e#102#103#0" expanded="true" />
-            <element signature="e#121#122#0" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/Track.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -749,16 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/com/exemplo/rest/JSONServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="28" column="96" selection-start-line="28" selection-start-column="96" selection-end-line="28" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -789,50 +809,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar!/org/codehaus/jettison/json/JSONObject.class">
+    <entry file="file://$PROJECT_DIR$/target/classes/com/exemplo/rest/JSONService.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="330">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/Dados.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="56" column="31" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="31" />
+        <state relative-caret-position="314">
+          <caret line="116" column="39" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
             <element signature="method#calcula#0;class#Dados#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/CSVReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/rest/JSONService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3635">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="390">
+          <caret line="41" column="11" selection-start-line="41" selection-start-column="8" selection-end-line="57" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar!/org/codehaus/jettison/json/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/CSVReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -841,11 +856,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/exemplo/WatchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+        <state relative-caret-position="523">
+          <caret line="99" column="17" lean-forward="true" selection-start-line="93" selection-start-column="16" selection-end-line="99" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3760#3782#0" />
+            <element signature="method#removeFirstLine#0;class#WatchService#0" />
+            <element signature="method#clean#0;class#WatchService#0" />
+            <element signature="e#7731#7752#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/com/exemplo/rest/JSONServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
