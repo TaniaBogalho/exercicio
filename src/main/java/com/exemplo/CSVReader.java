@@ -13,7 +13,7 @@ public class CSVReader {
     //Delimiter used in CSV file
     private static final String COMMA_DELIMITER = ",";
 
-    public static String path = "";
+    public static String path = "";  //never used
 
 
     public JSONObject readCsvFile(String fileName) {

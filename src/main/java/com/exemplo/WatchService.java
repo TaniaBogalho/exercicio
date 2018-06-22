@@ -35,19 +35,19 @@ public class WatchService {
     }
 
 
-    private void CVSFile() {
+    private void CVSFile() { //this method is to complex. functionality should be split across several methods
 
-        File invalid_file = new File("/home/tania/invalid/test_file_invalidos.csv");
+        File invalid_file = new File("/home/tania/invalid/test_file_invalidos.csv"); //constant
         //fileWriter = new FileWriter(invalid_file,true);
 
         StringBuilder builder = new StringBuilder();
-        String ColumnNamesList = "filename, op, value1, value2";
+        String ColumnNamesList = "filename, op, value1, value2"; //constant
 
 
         try
         {
             //region .log file
-            FileHandler fileHandler = new FileHandler("/home/tania/logger.log", true);
+            FileHandler fileHandler = new FileHandler("/home/tania/logger.log", true); //constant
 
             LOGGER.addHandler(fileHandler);
             SimpleFormatter formatter = new SimpleFormatter();
@@ -64,10 +64,10 @@ public class WatchService {
 
 
 
-        java.nio.file.Path path = Paths.get("/home/tania/input/");
+        java.nio.file.Path path = Paths.get("/home/tania/input/"); //constant
 
-        JSONObject obj_input;
-        JSONObject obj_output = null;
+        JSONObject obj_input; //variable names must be in camel case
+        JSONObject obj_output = null; //variable names must be in camel case
 
 
         try {
@@ -77,7 +77,7 @@ public class WatchService {
             //Associate watch service at the directory to listen to the event types
             WatchKey watchKey = path.register(watcher, StandardWatchEventKinds.ENTRY_CREATE);
 
-            while(true)
+            while(true)  //should have a sleep
             {
 
                 FileWriter fileWriter = new FileWriter(invalid_file, true);
@@ -171,7 +171,7 @@ public class WatchService {
                 boolean validKey = watchKey.reset();
 
                 if (! validKey) {
-                    System.out.println("Invalid watch key, close the watch service");
+                    System.out.println("Invalid watch key, close the watch service");  //logger
                 }
 
                 //Write in .log file
@@ -191,8 +191,8 @@ public class WatchService {
     }
 
     //Function to remove first line of csv file
-    private static void removeFirstLine(String fileName) throws IOException {
-        RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
+    private static void removeFirstLine(String fileName) throws IOException { //final
+        RandomAccessFile raf = new RandomAccessFile(fileName, "rw"); //variable name should be meaningful
         //Initial write position
         long writePosition = raf.getFilePointer();
         raf.readLine();

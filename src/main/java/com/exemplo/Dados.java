@@ -87,7 +87,7 @@ public class Dados {
         return jsonOperacao;
     }
 
-    public JSONObject calcula(String op, double value1, double value2) throws JSONException {
+    public JSONObject calcula(String op, double value1, double value2) throws JSONException {  //not used
         JSONObject jsonOperacao = new JSONObject();
 
         switch (op)

@@ -23,7 +23,7 @@ public class JSONService {
 	Date data = new Date();
 
 
-	private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); //use meaningful names for variables. Constants should be named in uppercase
 
 	private static final DateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
@@ -39,10 +39,10 @@ public class JSONService {
 	public JSONObject receiveJSON(JSONObject inputJsonObj) throws JSONException
 	{
 
-		try
+		try //this block shouldn't be here
 		{
 			//region ficheiro .log
-			fileHandler = new FileHandler("/home/tania/logger.log", true);
+			fileHandler = new FileHandler("/home/tania/logger.log", true); //string literals must be avoid. Only acceptable exception is in log messages
 
 			LOGGER.addHandler(fileHandler);
 			SimpleFormatter formatter = new SimpleFormatter();
@@ -59,7 +59,7 @@ public class JSONService {
 
 		Dados dados = new Dados();
 		dados.setOp(inputJsonObj.getString("op"));
-		dados.setValue1(Double.parseDouble(inputJsonObj.get("value1").toString()));
+		dados.setValue1(Double.parseDouble(inputJsonObj.get("value1").toString())); //the JSONException should be taken care of
 		dados.setValue2(Double.parseDouble(inputJsonObj.get("value2").toString()));
 
 
