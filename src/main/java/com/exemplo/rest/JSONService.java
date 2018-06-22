@@ -19,14 +19,6 @@ import java.util.logging.*;
 @Path("/json")
 public class JSONService {
 
-
-	Date data = new Date();
-
-
-	private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-	private static final DateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
 	private static Logger LOGGER = Logger.getLogger(JSONService.class.getName());
 
 	FileHandler fileHandler;
@@ -59,8 +51,8 @@ public class JSONService {
 
 		Dados dados = new Dados();
 		dados.setOp(inputJsonObj.getString("op"));
-		dados.setValue1(Double.parseDouble(inputJsonObj.get("value1").toString()));
-		dados.setValue2(Double.parseDouble(inputJsonObj.get("value2").toString()));
+		dados.setValue1(inputJsonObj.getDouble("value1"));
+		dados.setValue2(inputJsonObj.getDouble("value2"));
 
 
 		//Escrevemos no ficheiro .log
