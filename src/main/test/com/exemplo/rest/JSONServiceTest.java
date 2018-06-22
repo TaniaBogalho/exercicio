@@ -5,7 +5,6 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.StandardWatchEventKinds;
 import java.nio.file.WatchEvent;
@@ -13,7 +12,8 @@ import java.nio.file.WatchKey;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,8 +23,9 @@ class JSONServiceTest {
 
     private static CSVReader cvs = new CSVReader();
 
+
     @Test
-    void testReceiveJSON () throws IOException, JSONException
+    void testReceiveJSON () throws JSONException
     {
 
         JSONObject obj_a_testar = new JSONObject()
