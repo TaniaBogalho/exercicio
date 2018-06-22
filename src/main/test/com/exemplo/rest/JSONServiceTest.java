@@ -26,7 +26,7 @@ class JSONServiceTest {
         JSONObject obj = js.receiveJSON(obj_a_testar);
 
         String atual = obj.toString();
-        String expected = "{\"op\":\"sum\",\"value1\":10,\"value2\":5,\"Total\":15,\"Data\":\"21\\/06\\/2018\"}";
+        String expected = "{\"op\":\"sum\",\"value1\":10,\"value2\":5,\"Total\":15,\"Data\":\"22\\/06\\/2018\"}";
 
         assertEquals(expected, atual);
     }
