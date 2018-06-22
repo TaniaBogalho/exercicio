@@ -67,7 +67,7 @@ public class WatchService {
         java.nio.file.Path path = Paths.get("/home/tania/input/");
 
         JSONObject obj_input;
-        //JSONObject obj_output = null;
+        JSONObject obj_output = null;
 
 
         try {
@@ -147,7 +147,9 @@ public class WatchService {
                         else
                         {
                             //Send the JSONObject read in JSONService of Ex. Part 1.
-                            jsonService.receiveJSON(obj_input);
+                            obj_output = jsonService.receiveJSON(obj_input);
+
+                            System.out.println(obj_output.toString());
                         }
 
 
