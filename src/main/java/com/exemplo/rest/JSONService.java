@@ -10,26 +10,16 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.logging.*;
 
 
 @Path("/json")
 public class JSONService {
 
-
-	Date data = new Date();
-
-
-	private static final DateFormat SimpleDateFormat = new SimpleDateFormat("dd/MM/yyyy"); //use meaningful names for variables. Constants should be named in uppercase
-
-	private static final DateFormat CompleteDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
 	private static Logger LOGGER = Logger.getLogger(JSONService.class.getName());
 
 	FileHandler fileHandler;
+
 
 	/**
 	 * Returns a JSONObject with operation, value1, value2, total of operation and date time of operation
