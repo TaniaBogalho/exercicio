@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardWatchEventKinds;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -23,21 +25,47 @@ class JSONServiceTest {
 
     private static CSVReader cvs = new CSVReader();
 
+    Date data = new Date();
+
+    Calendar calendar;
 
     @Test
-    void testReceiveJSON () throws JSONException
+    void testReceiveJSON ()
     {
 
-        JSONObject obj_a_testar = new JSONObject()
+        calendar = Calendar.getInstance();
+        calendar.setTime(data);
+
+        int year = calendar.get(Calendar.YEAR);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH)+1;
+
+
+        JSONObject obj_input = null;
+
+        try {
+            obj_input = new JSONObject()
                     .put("op", "sum")
                     .put("value1", 10)
                     .put("value2", 5);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
-        JSONObject obj = jsonService.receiveJSON(obj_a_testar);
+        JSONObject obj_output = jsonService.receiveJSON(obj_input);
 
-        String atual = obj.toString();
-        String expected = "{\"op\":\"sum\",\"value1\":10,\"value2\":5,\"Total\":15,\"Data\":\"22\\/06\\/2018\"}";
+        String atual = null;
+        String expected = null;
+
+        try {
+            atual = "{\"op\":\"" + obj_input.getString("op") + "\",\"value1\":" + obj_input.getDouble("value1") +  ",\"value2\":" + obj_input.getDouble("value2") + ",\"Total\":" + obj_output.getString("Total") + ",\"Data\":\"" + day+ "\\/" + (month<10?("0"+month):(month)) + "\\/" + year + "\"}";
+            expected = "{\"op\":\"" + obj_output.getString("op") + "\",\"value1\":" + obj_output.getDouble("value1") +  ",\"value2\":" + obj_output.getDouble("value2") + ",\"Total\":" + obj_output.getString("Total") + ",\"Data\":\"" + day+ "\\/" + (month<10?("0"+month):(month)) + "\\/" + year + "\"}";
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
         assertEquals(expected, atual);
     }
