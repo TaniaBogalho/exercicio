@@ -36,14 +36,13 @@ public class WatchService {
 
     public static void main(String [] args) {
 
-        new WatchService().CVSFile();
+        new WatchService().ReadCSVFile();
 
         clean(LOGGER);
     }
 
     /**
      * Prepare the InvalidFile.
-     *
      */
     private void PrepareInvalidFile()
     {
@@ -56,7 +55,6 @@ public class WatchService {
 
     /**
      * Prepare the Log File. Create FileHandler, and use it in Logger.
-     *
      */
     private void PrepareLogFile()
     {
@@ -74,7 +72,7 @@ public class WatchService {
     }
 
     /**
-     * Write into invalid file the process filename and the JSONObject with operation, value1 and value2.
+     * Write into invalid file the processed filename and the JSONObject with operation, value1 and value2.
      *
      *  @param  fileName  file name processed and with invalid lines
      *  @param  jsonObjectToUse the JSONObject to use to write in invalid file
@@ -147,7 +145,7 @@ public class WatchService {
     /**
      * Function to start WatchService in specific folder and processed the created files.
      */
-    private void CVSFile() {
+    public void ReadCSVFile() {
 
         PrepareInvalidFile();
 
@@ -171,7 +169,6 @@ public class WatchService {
 
             while(true)  //should have a sleep
             {
-
                 fileWriter = new FileWriter(invalid_file, true);
 
                 try {
@@ -225,15 +222,19 @@ public class WatchService {
                 }
 
                 //Write in .log file
-                LOGGER.info(" FIM PROCESSO\n\n\n");
+                LOGGER.info(" END PROCESS\n\n\n");
 
 
                 clean(LOGGER);
+
+                Thread.sleep(3000);
             }
 
         } catch (IOException | JSONException e) {
             e.printStackTrace();
             LOGGER.log(Level.SEVERE, e.toString(), e);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
     }
