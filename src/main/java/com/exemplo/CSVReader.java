@@ -13,17 +13,14 @@ public class CSVReader {
     //Delimiter used in CSV file
     private static final String COMMA_DELIMITER = ",";
 
-    public static String path = "";  //never used
-
 
     public JSONObject readCsvFile(String fileName) {
 
         BufferedReader fileReader = null;
 
-        JSONObject json_obj_ficheiro = new JSONObject();
+        JSONObject json_obj_file = new JSONObject();
 
-
-            String line = "";
+        String line = "";
 
 
         try
@@ -48,19 +45,19 @@ public class CSVReader {
                     dados.setValue2(Double.parseDouble(tokens[2]));
                     */
 
-                    json_obj_ficheiro.put("op", tokens[0]);
-                    json_obj_ficheiro.put("value1", tokens[1]);
-                    json_obj_ficheiro.put("value2", tokens[2]);
+                    json_obj_file.put("op", tokens[0]);
+                    json_obj_file.put("value1", tokens[1]);
+                    json_obj_file.put("value2", tokens[2]);
 
                 }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.out.println("Ficheiro não encontrado!!");
+            System.out.println("File doesn't found!!");
 
         } catch (JSONException e) {
             e.printStackTrace();
-            System.out.println("Erro na leitura dos dados do ficheiro!!");
+            System.out.println("Error reading file data!!");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -70,14 +67,14 @@ public class CSVReader {
             try {
                 fileReader.close();
             } catch (IOException e) {
-                System.out.println("Erro enquanto fechamos o fileReader !!!");
+                System.out.println("Error while closing the fileReader!!!");
 
                 e.printStackTrace();
             }
         }
 
 
-        return json_obj_ficheiro;
+        return json_obj_file;
     }
 }
 
