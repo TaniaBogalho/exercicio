@@ -33,7 +33,7 @@ public class WatchService {
 
     private FileWriter fileWriter;
 
-    private Thread thread;
+    //private Thread thread;
 
 
     public static void main(String [] args) {
