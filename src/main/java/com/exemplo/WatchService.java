@@ -33,10 +33,12 @@ public class WatchService {
 
     private FileWriter fileWriter;
 
+    private Thread thread;
+
 
     public static void main(String [] args) {
 
-        new WatchService().ReadCSVFile();
+        new WatchService().readCSVFile();
 
         clean(LOGGER);
     }
@@ -44,7 +46,7 @@ public class WatchService {
     /**
      * Prepare the InvalidFile.
      */
-    private void PrepareInvalidFile()
+    private void prepareInvalidFile()
     {
         invalid_file = new File("/home/tania/invalid/test_file_invalidos.csv");
 
@@ -56,7 +58,7 @@ public class WatchService {
     /**
      * Prepare the Log File. Create FileHandler, and use it in Logger.
      */
-    private void PrepareLogFile()
+    private void prepareLogFile()
     {
         try {
 
@@ -77,7 +79,7 @@ public class WatchService {
      *  @param  fileName  file name processed and with invalid lines
      *  @param  jsonObjectToUse the JSONObject to use to write in invalid file
      */
-    private void WriteInInvalidFile(String fileName, JSONObject jsonObjectToUse)
+    private void writeInInvalidFile(String fileName, JSONObject jsonObjectToUse)
     {
         try {
         //Write the incorrect line of file read in invalid_lines file
@@ -125,9 +127,9 @@ public class WatchService {
     /**
      * Move the file from input folder to output folder.
      *
-     * @param fileName  file name that i want to use.
+     * @param fileName  file name that we intend to use.
      */
-    private void MoveFile(String fileName)
+    private void moveFile(String fileName)
     {
         try {
             File source = new File("/home/tania/input/" + fileName);
@@ -145,98 +147,101 @@ public class WatchService {
     /**
      * Function to start WatchService in specific folder and processed the created files.
      */
-    public void ReadCSVFile() {
+    public void readCSVFile() {
 
-        PrepareInvalidFile();
+        prepareInvalidFile();
 
-        PrepareLogFile();
+        prepareLogFile();
 
 
         //Write in .log file
-        LOGGER.info("INICIO PROCESSO\n");
+        LOGGER.info("START PROCESS\n");
 
 
-        JSONObject objInput;
-        JSONObject objOutput;
+
+        thread = new Thread(() -> {
 
 
-        try {
-            //Create a WatchService in folder that we intend to monitor
-            java.nio.file.WatchService watcher = path.getFileSystem().newWatchService();
+            JSONObject objInput;
+            JSONObject objOutput;
 
-            //Associate watch service at the directory to listen to the event types
-            WatchKey watchKey = path.register(watcher, StandardWatchEventKinds.ENTRY_CREATE);
+            try {
 
-            while(true)  //should have a sleep
-            {
-                fileWriter = new FileWriter(invalid_file, true);
+                //Create a WatchService in folder that we intend to monitor
 
-                try {
-                    // listen to events
-                    watchKey = watcher.take();
-                }
-                catch (InterruptedException ex) {
-                    ex.printStackTrace();
-                }
+                java.nio.file.WatchService watcher = path.getFileSystem().newWatchService();
+
+                //Associate watch service at the directory to listen to the event types
+                WatchKey watchKey = path.register(watcher, StandardWatchEventKinds.ENTRY_CREATE);
 
 
-                // get list of events as they occur
-                List<WatchEvent<?>> events = watchKey.pollEvents();
-
-
-                //iterate over events
-                for (WatchEvent event : events)
+                while (true)  //should have a sleep
                 {
-                    //check if the event refers to a new file created
-                    if (event.kind() == StandardWatchEventKinds.ENTRY_CREATE)
-                    {
-                        //Fill the JSONObject with the function readCsvFile return (read in file)
-                        objInput = cvs.readCsvFile("/home/tania/input/" + event.context().toString());
+
+                    fileWriter = new FileWriter(invalid_file, true);
 
 
-                        //Verify the operation read in file
-                        if(!objInput.get("op").equals("sum") & !objInput.get("op").equals("avg") & !objInput.get("op").equals("mul") & !objInput.get("op").equals("div") )
-                        {
-                            WriteInInvalidFile(event.context().toString(), objInput);
-                        }
-
-                        else
-                        {
-                            //Send the read JSONObject in JSONService of Ex. Part 1.
-                            objOutput = jsonService.receiveJSON(objInput);
-
-                            System.out.println(objOutput.toString());
-                        }
-
-
-                        //Move the processed file to folder output
-                        MoveFile(event.context().toString());
+                    try {
+                        // listen to events
+                        watchKey = watcher.take();
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
                     }
-                }
 
-                boolean validKey = watchKey.reset();
+                    Thread.sleep(500);
 
-                if (! validKey) {
+                    // get list of events as they occur
+                    List<WatchEvent<?>> events = watchKey.pollEvents();
+
+
+                    //iterate over events
+                    for (WatchEvent event : events) {
+                        //check if the event refers to a new file created
+                        if (event.kind() == StandardWatchEventKinds.ENTRY_CREATE) {
+                            //Fill the JSONObject with the function readCsvFile return (read in file)
+                            objInput = cvs.readCsvFile("/home/tania/input/" + event.context().toString());
+
+
+                            //Verify the operation read in file
+                            if (!objInput.get("op").equals("sum") & !objInput.get("op").equals("avg") & !objInput.get("op").equals("mul") & !objInput.get("op").equals("div")) {
+                                writeInInvalidFile(event.context().toString(), objInput);
+                            } else {
+                                //Send the read JSONObject in JSONService of Ex. Part 1.
+                                objOutput = jsonService.receiveJSON(objInput);
+
+                                System.out.println(objOutput.toString());
+                            }
+
+
+                            //Move the processed file to folder output
+                            moveFile(event.context().toString());
+
+                        }
+                    }
+
+                    boolean validKey = watchKey.reset();
+
+                    if (!validKey) {
+                        //Write in .log file
+                        LOGGER.log(Level.SEVERE, "Invalid watch key, close the watch service.\n");
+                    }
+
                     //Write in .log file
-                    LOGGER.log(Level.SEVERE, "Invalid watch key, close the watch service.\n");
+                    LOGGER.info(" END PROCESS\n\n\n");
+
+
+                    clean(LOGGER);
                 }
 
-                //Write in .log file
-                LOGGER.info(" END PROCESS\n\n\n");
-
-
-                clean(LOGGER);
-
-                Thread.sleep(3000);
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+                LOGGER.log(Level.SEVERE, e.toString(), e);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+        });
 
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-            LOGGER.log(Level.SEVERE, e.toString(), e);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        thread.start();
     }
 
     /**
