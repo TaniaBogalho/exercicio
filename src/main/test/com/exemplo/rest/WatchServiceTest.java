@@ -2,7 +2,6 @@ package com.exemplo.rest;
 
 import com.exemplo.WatchService;
 import org.apache.commons.io.FileUtils;
-import org.easymock.TestSubject;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -18,12 +17,12 @@ class WatchServiceTest {
     */
 
     //Set the tested class
-    @TestSubject
-    private WatchService watchService = new WatchService();
+    /*@TestSubject
+    private WatchService watchService = new WatchService();*/
 
     
     
-    private static void createFile()
+    /*private static void createFile()
     {
         String sourcePath = "/home/tania/test_file.csv";
         File source = new File(sourcePath);
@@ -39,12 +38,15 @@ class WatchServiceTest {
             e.printStackTrace();
         }
 
-    }
+    }*/
 
     @Test
     void testReadCSVFile()
     {
-        Thread watchServicethread = new Thread(() -> watchService.readCSVFile());
+
+        WatchService watchService = new WatchService();
+
+        Thread watchServicethread = new Thread(watchService::readCSVFile);
         watchServicethread.start();
 
         try {
@@ -56,7 +58,26 @@ class WatchServiceTest {
         }
 
 
-        Thread createFilethread = new Thread(WatchServiceTest::createFile);
+        //Thread createFilethread = new Thread(WatchServiceTest::createFile);
+
+        Thread createFilethread = new Thread(() ->
+        {
+            String sourcePath = "/home/tania/test_file.csv";
+            File source = new File(sourcePath);
+
+            String destPath = "/home/tania/input/test_file.csv";
+            File dest = new File(destPath);
+
+
+            try {
+                FileUtils.copyFile(source,dest);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
         createFilethread.start();
 
 
