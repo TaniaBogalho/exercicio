@@ -2,74 +2,81 @@ package com.exemplo.rest;
 
 import com.exemplo.WatchService;
 import org.apache.commons.io.FileUtils;
+import org.easymock.EasyMockRunner;
+import org.easymock.TestSubject;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 
 import java.io.File;
+import java.io.IOException;
 
+//import java.io.File;
+
+@RunWith(EasyMockRunner.class)
 class WatchServiceTest {
 
+    //Create de mock
+    /*@Mock
+    private Files file = EasyMock.createMock(Files.class);
+    */
+
+    //Set the tested class
+    @TestSubject
     private WatchService watchService = new WatchService();
 
-    @Test
-    void testCVSFile() throws Exception
+    
+    
+    private static void createFile()
     {
+        //boolean sucess = false;
 
-        watchService.ReadCSVFile();
+        String sourcePath = "/home/tania/test_file.csv";
+        File source = new File(sourcePath);
 
-        File source = new File("/home/tania/test_file.csv");
-        File dest = new File("/home/tania/input/test_file.csv");
-
-        FileUtils.copyFile(source, dest);
-
-
-       /* while (true) {
-
-            try {
-                //iterate over events
-                // listen to events
-                watchKey = watcher.take();
-
-                // get list of events as they occur
-                List<WatchEvent<?>> events = watchKey.pollEvents();
-
-                File source = new File("/home/tania/test_file.csv");
-                File dest = new File("/home/tania/input/test_file.csv");
-
-                FileUtils.copyFile(source, dest);
-
-                for (WatchEvent event : events) {
-                    assertThat(event.kind() == StandardWatchEventKinds.ENTRY_CREATE, is(true));
-
-                    JSONObject obj_input = cvs.readCsvFile("");
-
-                    JSONObject obj_output = jsonService.receiveJSON(obj_input);
+        String destPath = "/home/tania/input/test_file.csv";
+        File dest = new File(destPath);
 
 
-                    String atual = null;
-                    String expected = null;
+        try {
+            FileUtils.copyFile(source,dest);
+            //sucess = true;
 
-                    try {
-                        atual = "{\"op\":\"" + obj_input.getString("op") + "\",\"value1\":" + obj_input.getDouble
-                                ("value1") + ",\"value2\":" + obj_input.getDouble("value2") + ",\"Total\":" +
-                                obj_output.getString("Total") + ",\"Data\":\"" + day + "\\/" + (month < 10 ? ("0" +
-                                month) : (month)) + "\\/" + year + "\"}";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-                        expected = "{\"op\":\"" + obj_output.getString("op") + "\",\"value1\":" + obj_output
-                                .getDouble("value1") + ",\"value2\":" + obj_output.getDouble("value2") + "," +
-                                "\"Total\":" + obj_output.getString("Total") + ",\"Data\":\"" + day + "\\/" + (month
-                                < 10 ? ("0" + month) : (month)) + "\\/" + year + "\"}";
+        //return sucess;
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+    }
+
+    @Test
+    void testReadCSVFile()
+    {
+        Thread watchServicethread = new Thread(() -> watchService.readCSVFile());
+        watchServicethread.start();
 
 
-                    assertEquals(expected, atual);
-                }
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-            }
-        }*/
+        try {
+
+            Thread.sleep(1000);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        Thread createFilethread = new Thread(WatchServiceTest::createFile);
+        createFilethread.start();
+
+
+        try {
+
+            Thread.sleep(1000);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
