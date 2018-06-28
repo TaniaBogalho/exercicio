@@ -159,7 +159,7 @@ public class WatchService {
 
 
 
-        thread = new Thread(() -> {
+        //thread = new Thread(() -> {
 
 
             JSONObject objInput;
@@ -239,9 +239,9 @@ public class WatchService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        });
+        //});
 
-        thread.start();
+        //thread.start();
     }
 
     /**
